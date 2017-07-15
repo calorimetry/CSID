@@ -130,7 +130,8 @@ The resulting Figure 2 from Example 1 - Calibration
 The resulting Figure 3 from Example 1 - Calibration
 </p>
 
-
+### Input Prediction
+Next, the identified model can be used to calculate the inferred input power (<i>P<sub>inferred</sub></i>) and energy (<i>E<sub>inferred</sub></i>), and is compared with experimentally measured inputs. Figure 5 and 6 show modelled and inferred input energy and power (respectively) with corresponding COPs calculated for entire the run.
 ################################################
 
 
