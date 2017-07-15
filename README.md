@@ -158,81 +158,42 @@ The resulting Figure 8 from Example 1 - Calibration
 
 The generated figures from each example can be found in `/supporting/`.
 
+###How It Works
 
-################################################
+This code utilizes a grey-box modeling approach implemented in the MATLAB System Identification toolbox. First, the input data is imported from a .csv file, downsampled, and interpolated on equally spaced timestamps. It is then encapsulated in an `iddata` object, which is subsequently used by the system identification toolbox to train linear (`idgrey`) or nonlinear (`idnlgrey`) grey-box models.
 
-
-
-
-
-### Calibration and Prediction
-Each script can operate in two modes: calibration or prediction.  This mode is defined by `run_data.model.action`:
+The source of calibration data to be used to fit the model is defined by the `experiment_name` variable within the `*calibration.m` file.  This reads in the CSV data.  In the examples, this appears as:
 
 ```matlab
-run_data.model.action = 'fit';  % fit: Calibration; predict: Prediction
+experiment_name = 'example_dataset_calibration.csv';
 ```
 
-### Model Selection
-Each calibration and prediction script designates the model to bse used with `run_data.model.type`.  For convenience, each model name is provided in a comment below.
+The downsampling factor and maximum number of search iterations are defined as:
 
 ```matlab
-run_data.model.type = 'one state master model with 0 Kelvin ground linear';
-%        M O D E L    T Y P E S
-% 'one state master model with 0 Kelvin ground linear'
-% 'one state master model with 0 Kelvin ground'
-% 'two state master model zero Kelvin ground linear'
-% 'two state master model zero Kelvin ground'
+run_data.downsample_factor = 1;
+max_iteration = 50;
 ```
 
-### Data Preparation
-Each model reads in either the calibration or sample data CSV from the `/system_id/tutorials/` directory.  
+The CSV is parsed by the name of the headers within the CSV file.  To execute this script on data other than the example data, update `map.headers` according to the CSV file being parsed in.  Further, update `map.names` and `map.units` to account for any alterations.  Any changes to `map.headers` or `map.units` must be propagated throughout the entire library.
 
-### Model Fitting
-Successful output from example 1 calibration:
-
-```  
-loading data...
-Total NaNs encountered while loading dataset: 0
-Analyzing dataset of length 987 points.
-
-Fitting model one state master model with 0 Kelvin ground linear
-
-Original and Fitted Model Parameters with standard deviation
------------------------------------------------------------------
-  Symbol   Start Value         Fit Value         Uncertainty
------------------------------------------------------------------
-     ca0   1.0000e+01   2.3011e-03 ± 1.3485e-04   ( 5.860%)
-     ca1   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
-     ca2   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
-     ka0   1.0000e+00   8.6677e-03 ± 3.2243e-04   ( 3.720%)
-     ka1   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
-     ka2   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
-     ka3   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
-
-Fitting Terminated because: Change in parameters was less than the specified tolerance
-Fit Percentage 94.77% for T-Core
-Fit Iterations 45
-Initiating energy calculations...
-Completing energy calculations...
-Finished.
+```matlab
+% define data import
+map.headers = {'Time (Seconds)', 'Power (W)', ...
+  'Temperature_Center(deg. C)', ...
+  'Temperature__Middle(deg. C)', ...
+  'Temperature_Surface(deg. C)'};
+map.names   = {'Time', 'input_power', 'center_temp', 'middle_temp', 'room_temp' };
+map.units   = {'Sec', 'Watts', 'Celsius', 'Celsius', 'Celsius'};
 ```
-### Generated figures
 
-<p align="center">
-<img src="/supporting/example1calibration_figure1.png" width="550" style="text-align: center;">
-</p>
-The resulting Figure 1 from Example 1 - Calibration
+Upon successful execution of a `*calibration.m` file, an `example_dataset_calibration.mat` file will be generated, containing the calculated model parameters.  This is is read in by a `*prediction.m` script:
 
-<p align="center">
-<img src="/supporting/example1calibration_figure2.png" width="550" style="text-align: center;">
-</p>
-The resulting Figure 2 from Example 1 - Calibration
+```matlab
+calibration_file = 'example_one_state_linear_calibration_file.mat';
+```
 
-<p align="center">
-<img src="/supporting/example1calibration_figure3.png" width="550" style="text-align: center;">
-</p>
-The resulting Figure 3 from Example 1 - Calibration
+Similar to how the `*calibration.m` file read in the `*calibration.csv` file, the `*prediction.m` file reads and parses in the `*prediction.csv` file.
 
 ### Contact
-All communication regarding this repository should be directed to calorimetry@google.com.
-
+All communication regarding this repository should be directed to [calorimetry@google.com](mailto:calorimetry@google.com).
