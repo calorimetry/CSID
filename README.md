@@ -132,6 +132,33 @@ The resulting Figure 3 from Example 1 - Calibration
 
 ### Input Prediction
 Next, the identified model can be used to calculate the inferred input power (<i>P<sub>inferred</sub></i>) and energy (<i>E<sub>inferred</sub></i>), and is compared with experimentally measured inputs. Figure 5 and 6 show modelled and inferred input energy and power (respectively) with corresponding COPs calculated for entire the run.
+
+<p align="center">
+<img src="/supporting/example1calibration_figure5.png" width="550" style="text-align: center;"><br />
+The resulting Figure 5 from Example 1 - Calibration
+</p>
+
+<p align="center">
+<img src="/supporting/example1calibration_figure6.png" width="550" style="text-align: center;"><br />
+The resulting Figure 6 from Example 1 - Calibration
+</p>
+
+### Performance Analysis
+Figure 7 of the analysis shows the cumulative input and output energy of the run. Further, residual energy defined as the difference between modelled and inferred energies are plotted. 
+
+<p align="center">
+<img src="/supporting/example1calibration_figure7.png" width="550" style="text-align: center;"><br />
+The resulting Figure 7 from Example 1 - Calibration
+</p>
+
+<p align="center">
+<img src="/supporting/example1calibration_figure8.png" width="550" style="text-align: center;"><br />
+The resulting Figure 8 from Example 1 - Calibration
+</p>
+
+The generated figures from each example can be found in `/supporting/`.
+
+
 ################################################
 
 
