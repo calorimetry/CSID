@@ -20,9 +20,22 @@ System identification is a family of techniques for developing mathematical mode
 For the purposes of analyzing the calorimetry data herein, the second of these functions will be most important. 
 An expanded summary on system identification can be found on [Wikipedia](https://en.wikipedia.org/wiki/System_identification). The classic textbook on system identification is Lennart Ljung's "[System Identification: Theory for the user](https://books.google.ca/books/about/System_Identification.html?id=nHFoQgAACAAJ&redir_esc=y)".
 
+### Installation
+Download the CSID repository from the download button above, or by executing:
 
+```
+git clone https://github.com/calorimetry/CSID
+```
 
+The CSID library comes with four examples that execute on sample data out-of-the box.  These are located in `/system_id/examples/`.  For example, executing `/examples/example_1 - one-state linear model/one_state_linear_calibration.m` with MATLAB will result in a one-state, linear model calibration using the `example_dataset_calibration.csv`.
 
+### System ID Tutorial
+
+Four examples are included in `/system_id/examples/`.  Each example demonstrates a different model: either a one- or two-state model, and either linear or nonlinear.  As included, these examples fit a model to the same set of sample data.
+
+<p align="center">
+<img src="/supporting/schematic1.png" width="80%" style="text-align: center;">
+</p>
 
 ################################################
 
