@@ -1,0 +1,7 @@
+Icon\r\r
+*.asv
+*.m~
+*.mex*
+~*
+.DS_Store
+git.sh
