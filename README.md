@@ -27,7 +27,7 @@ Download the CSID repository from the download button above, or by executing:
 git clone https://github.com/calorimetry/CSID
 ```
 
-The CSID library comes with four examples that execute on sample data out-of-the box.  These are located in `/CSID/examples/`.  For example, executing `/examples/example_1 - one-state linear model/one_state_linear_calibration.m` with MATLAB will result in a one-state, linear model calibration using the `example_dataset_calibration.csv`.
+The CSID library comes with four examples that execute on sample data out-of-the box.  These are located in `/CSID/examples/`.  For example, executing `/CSID/examples/example_1 - one-state linear model/one_state_linear_calibration.m` with MATLAB will result in a one-state, linear model calibration using the `example_dataset_calibration.csv`.
 
 ### System ID Tutorial
 
