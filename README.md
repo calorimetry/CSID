@@ -158,7 +158,7 @@ The resulting Figure 8 from Example 1 - Calibration
 
 The generated figures from each example can be found in `/supporting/`.
 
-###How It Works
+### How It Works
 
 This code utilizes a grey-box modeling approach implemented in the MATLAB System Identification toolbox. First, the input data is imported from a .csv file, downsampled, and interpolated on equally spaced timestamps. It is then encapsulated in an `iddata` object, which is subsequently used by the system identification toolbox to train linear (`idgrey`) or nonlinear (`idnlgrey`) grey-box models.
 

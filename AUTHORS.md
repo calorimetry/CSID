@@ -1,3 +1,7 @@
+<p align="center">
+<img src="/supporting/CSID_logo.png" width="350" style="text-align: center;">
+</p>
+
 # List of Authors
 
 ### Original Design
