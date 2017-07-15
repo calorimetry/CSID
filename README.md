@@ -121,16 +121,15 @@ The resulting Figure 1 from Example 1 - Calibration
 
 
 <p align="center">
-<img src="/supporting/example1calibration_figure2.png" width="550" style="text-align: center;">
-</p>
-
+<img src="/supporting/example1calibration_figure2.png" width="550" style="text-align: center;"><br />
 The resulting Figure 2 from Example 1 - Calibration
+</p>
 
 <p align="center">
-<img src="/supporting/example1calibration_figure3.png" width="550" style="text-align: center;">
+<img src="/supporting/example1calibration_figure3.png" width="550" style="text-align: center;"><br />
+The resulting Figure 3 from Example 1 - Calibration
 </p>
 
-The resulting Figure 3 from Example 1 - Calibration
 
 ################################################
 
