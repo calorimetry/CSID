@@ -39,21 +39,32 @@ Four examples are included in `/system_id/examples/`.  Each example demonstrates
 
 Each example has two MATLAB scripts: a calibration and prediction script.  The calibration script determines the calorimeter-dependent constants for the model by fitting the provided time-resolved temperature data (T<sub>1</sub>) as a function of the time-resolved input power data (P<sub>1</sub>). 
 
+<p align="center">
+<img src="/supporting/schematic2.png" width="80%" style="text-align: center;">
+</p>
+
+After using the calibration data and script to identify the model parameters, the model can now be used to predict the temperature of a system, given any arbitrary input power. Moreover, the model can also be used to determine the inverse: predict the input power (P<sub>2</sub>*) from the output temperature data (T<sub>2</sub>). This is specifically useful in scenarios when an unknown exo/endothermic phenomena is being studied, and the total input power (P<sub>2</sub>) is unknown.
+
+Each model fits the provided sample data with varying degrees of accuracy.  The accuracy of a model is described by how well the model can predict the system output, as defined by the Normalized Root Mean Square of Error (NRMSE).
+
+Further, we quantify deviation between measured and inferred power (energy) and report them as residuals of the prediction.
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?P_{residual}&space;=&space;P_{inferred}&space;-&space;P_{input}" title="P_{residual} = P_{inferred} - P_{input}" style="text-align: center;">
+</p>
+
+Furthermore, we quantify deviation between measured and inferred power (energy) and report them as residuals of the prediction.
+
+<p align="center">
+<img src="https://latex.codecogs.com/gif.latex?COP_{Power}&space;=&space;\frac{P_{inferred}}{P_{input}}" style="text-align: center;">
+</p>
+
 
 ################################################
 
 
 
 
-<p align="center">
-<img src="https://latex.codecogs.com/gif.latex?COP_{Power}&space;=&space;\frac{P_{inferred}}{P_{input}}" style="text-align: center;">
-</p>
-
-Furthermore, we quantify deviation between measured and inferred power (energy) and report them as residuals of the prediction.
-
-<p align="center">
-<img src="https://latex.codecogs.com/gif.latex?P_{residual}&space;=&space;P_{inferred}&space;-&space;P_{input}" title="P_{residual} = P_{inferred} - P_{input}" style="text-align: center;">
-</p>
 
 ### Calibration and Prediction
 Each script can operate in two modes: calibration or prediction.  This mode is defined by `run_data.model.action`:
