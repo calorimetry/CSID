@@ -27,11 +27,11 @@ Download the CSID repository from the download button above, or by executing:
 git clone https://github.com/calorimetry/CSID
 ```
 
-The CSID library comes with four examples that execute on sample data out-of-the box.  These are located in `/system_id/examples/`.  For example, executing `/examples/example_1 - one-state linear model/one_state_linear_calibration.m` with MATLAB will result in a one-state, linear model calibration using the `example_dataset_calibration.csv`.
+The CSID library comes with four examples that execute on sample data out-of-the box.  These are located in `/CSID/examples/`.  For example, executing `/examples/example_1 - one-state linear model/one_state_linear_calibration.m` with MATLAB will result in a one-state, linear model calibration using the `example_dataset_calibration.csv`.
 
 ### System ID Tutorial
 
-Four examples are included in `/system_id/examples/`.  Each example demonstrates a different model: either a one- or two-state model, and either linear or nonlinear.  As included, these examples fit a model to the same set of sample data.
+Four examples are included in `/CSID/examples/`.  Each example demonstrates a different model: either a one- or two-state model, and either linear or nonlinear.  As included, these examples fit a model to the same set of sample data.
 
 <p align="center">
 <img src="/supporting/schematic1.png" width="80%" style="text-align: center;">
@@ -79,7 +79,7 @@ run_data.model.type = 'one state master model with 0 Kelvin ground linear';
 ```
 
 ### Data Preparation
-Each model reads in either the calibration or sample data CSV from the `/system_id/tutorials/` directory.  
+Each model reads in either the calibration or sample data CSV from the `/CSID/examples/` directory.  
 
 ### Model Fitting
 
