@@ -114,17 +114,21 @@ Finished.
 
 ### Generated figures
 
-<center>
-  <img src="/supporting/example1calibration_figure1.png" width="550" style="text-align: center;">
-
+<p align="center">
+<img src="/supporting/example1calibration_figure1.png" width="550" style="text-align: center;">
 The resulting Figure 1 from Example 1 - Calibration
+</p>
 
+
+<p align="center">
 <img src="/supporting/example1calibration_figure2.png" width="550" style="text-align: center;">
+</p>
 
 The resulting Figure 2 from Example 1 - Calibration
 
+<p align="center">
 <img src="/supporting/example1calibration_figure3.png" width="550" style="text-align: center;">
-</center>
+</p>
 
 The resulting Figure 3 from Example 1 - Calibration
 
