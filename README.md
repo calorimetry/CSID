@@ -37,6 +37,9 @@ Four examples are included in `/system_id/examples/`.  Each example demonstrates
 <img src="/supporting/schematic1.png" width="80%" style="text-align: center;">
 </p>
 
+Each example has two MATLAB scripts: a calibration and prediction script.  The calibration script determines the calorimeter-dependent constants for the model by fitting the provided time-resolved temperature data (T<sub>1</sub>) as a function of the time-resolved input power data (P<sub>1</sub>). 
+
+
 ################################################
 
 
