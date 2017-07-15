@@ -7,49 +7,28 @@
 Calorimetry System Identification (CSID) is a MATLAB library for modelling calorimeters using System Identification and Optimization toolboxes.
 
 ### Requirements
+
 MATLAB R2016a (Version 9.0), with the following toolboxes:
-Optimization ToolboxTM (Version 7.4)
-System Identification ToolboxTM (Version 9.4)
+- Optimization Toolbox<sup>TM</sup> (Version 7.4)
+- System Identification Toolbox<sup>TM</sup> (Version 9.4)
 Executing these scripts with previous or subsequent versions of MATLAB will likely cause an exception to be raised.
 
-### Installation
-Download the CSID repository.
-```
-git clone https://github.com/fraserparlane-google/csid
-```
-The CSID library comes with four examples that execute on sample data out-of-the box.  These are located in `/system_id/examples/`.  To add the CSID library to external MATLAB files, add the CSID lib directory to your MATLAB search path by adding the following to your MATLAB script:
-
-```matlab
-addpath(‘[your_path]/system_id/lib’)
-
-```
 ### What is System Identification?
 System identification is a family of techniques for developing mathematical models of dynamic systems from experimental data.  System identification typically attempts to fit a model (for example a lumped-element model) to experimental training data (such as time-series data from a calibration experiment) for a given dynamical system (such as a calorimeter).  The training data serves to quantitatively identify the key characteristics of the system.  Once a satisfactory model has been found, it can be used for at least two important functions:   
 - **Controller design:** Given a desired output from the system, determine the necessary input signal(s).
 - **Input extraction:** Given a measured output, determine an input that could have created it.
 For the purposes of analyzing the calorimetry data herein, the second of these functions will be most important. 
-An expanded summary on system identification can be found on Wikipedia. The classic textbook on system identification is Lennart Ljung's "System Identification: Theory for the user". 
+An expanded summary on system identification can be found on [Wikipedia](https://en.wikipedia.org/wiki/System_identification). The classic textbook on system identification is Lennart Ljung's "[System Identification: Theory for the user](https://books.google.ca/books/about/System_Identification.html?id=nHFoQgAACAAJ&redir_esc=y)".
 
-### System ID Tutorial
 
-Four examples are included in `/system_id/examples/`.  Each example demonstrates a different model: either a one- or two-state model, and either linear or nonlinear.  As included, these examples fit a model to the same set of sample data.
 
-<p align="center">
-<img src="/supporting/schematic1.png" width="80%" style="text-align: center;">
-</p>
 
-Each example has two MATLAB scripts: a calibration and prediction script.  The calibration script determines the calorimeter-dependent constants for the model by fitting the provided time-resolved temperature data (T1) as a function of the time-resolved input power data (P1). 
 
-<p align="center">
-<img src="/supporting/schematic2.png" width="80%:" style="text-align: center;">
-</p>
+################################################
 
-After using the calibration data and script to identify the model parameters, the model can now be used to predict the temperature of a system, given any arbitrary input power. Moreover, the model can also be used to determine the inverse: predict the input power (P2*) from the output temperature data (T2). This is specifically useful in scenarios when an unknown exo/endothermic phenomena is being studied, and the total input power (P2) is unknown.
-Each model fits the provided sample data with varying degrees of accuracy.  The accuracy of a model is described by how well the model can predict the system output, as defined by the Normalized Root Mean Square of Error (NRMSE).
 
-[NRMSE equation]
 
-Further, in experiments where the input to the system in known, this model can be used to define the Coefficient of Performance (COP) for power (or energy) of an experiment defined as:
+
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?COP_{Power}&space;=&space;\frac{P_{inferred}}{P_{input}}" style="text-align: center;">
 </p>
