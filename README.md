@@ -59,6 +59,59 @@ Furthermore, we quantify deviation between measured and inferred power (energy) 
 <img src="https://latex.codecogs.com/gif.latex?COP_{Power}&space;=&space;\frac{P_{inferred}}{P_{input}}" style="text-align: center;">
 </p>
 
+### Calibration and Prediction
+Each script can operate in two modes: calibration or prediction.  This mode is defined by `run_data.model.action`:
+
+```matlab
+run_data.model.action = 'fit';  % fit: Calibration; predict: Prediction
+```
+
+### Model Selection
+Each calibration and prediction script designates the model to bse used with `run_data.model.type`.  For convenience, each model name is provided in a comment below.
+
+```matlab
+run_data.model.type = 'one state master model with 0 Kelvin ground linear';
+%        M O D E L    T Y P E S
+% 'one state master model linear'
+% 'one state master model'
+% 'two state master model linear'
+% 'two state master model'
+```
+
+### Data Preparation
+Each model reads in either the calibration or sample data CSV from the `/system_id/tutorials/` directory.  
+
+### Model Fitting
+
+Successful output from example 1 calibration:
+
+```
+loading data...
+Total NaNs encountered while loading dataset: 0
+Analyzing dataset of length 987 points.
+
+Fitting model one state master model with 0 Kelvin ground linear
+
+Original and Fitted Model Parameters with standard deviation
+-----------------------------------------------------------------
+  Symbol   Start Value         Fit Value         Uncertainty
+-----------------------------------------------------------------
+     ca0   1.0000e+01   2.3011e-03 ± 1.3485e-04   ( 5.860%)
+     ca1   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
+     ca2   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
+     ka0   1.0000e+00   8.6677e-03 ± 3.2243e-04   ( 3.720%)
+     ka1   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
+     ka2   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
+     ka3   0.0000e+00   0.0000e+00 ± 0.0000e+00   (   NaN%)
+
+Fitting Terminated because: Change in parameters was less than the specified tolerance
+Fit Percentage 94.77% for T-Core
+Fit Iterations 45
+Initiating energy calculations...
+Completing energy calculations...
+Finished.
+```
+
 
 ################################################
 
